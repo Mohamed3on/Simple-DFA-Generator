@@ -8,13 +8,13 @@ public class Main {
     static Scanner in = new Scanner(System.in);
 
     static Machine getMachine(char[] language, int[] states, int[][] transitions, int initialState, int[] finalStates) {
-        Machine m = new Machine(language, states, transitions, initialState, finalStates);
-        return m;
+
+        return new Machine(language, states, transitions, initialState, finalStates);
     }
 
     public static void runMachine(Machine m) {
         while (true) {
-            System.out.println("input:");
+            System.out.print("input: ");
             String input = in.nextLine().toLowerCase();
             System.out.print("Output: ");
             if (m.isAccepted(input)) System.out.println("accepted");
